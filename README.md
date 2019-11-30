@@ -14,13 +14,13 @@ docker build . \
 ```
 
 ```
-    docker run \
-    -p 8888:8888 \
-    -v $(pwd):/notebooks \
-    -v $(pwd)/data:/notebooks/data \
-    -v ~/.aws:/home/docker/.aws \
-    --env AWS_PROFILE=default \
-    voice-recognition-python
+docker run \
+-p 8888:8888 \
+-v $(pwd):/notebooks \
+-v $(pwd)/data:/notebooks/data \
+-v ~/.aws:/home/docker/.aws \
+--env AWS_PROFILE=default \
+voice-recognition-python
 ```
 
 Notice that the above command _mounts_ the typical location where AWS CLI credentials are located (`~/.aws`).
