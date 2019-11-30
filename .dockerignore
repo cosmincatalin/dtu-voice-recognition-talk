@@ -1,0 +1,6 @@
+.dockerignore
+requirements.in
+data
+mp3
+.ipynb_chekpoints
+.git
