@@ -1,3 +1,4 @@
+# Ubunut baked with Python 3.6
 FROM matthewfeickert/docker-python3-ubuntu
 WORKDIR /notebooks
 COPY requirements.lock .
