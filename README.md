@@ -27,3 +27,5 @@ Notice that the above command _mounts_ the typical location where AWS CLI creden
 If you have your AWS credentials configuration somewhere else, modify accordingly.
 Similar, the `AWS_PROFILE` env variable is set to the `default` profile.
 You can modify this to use whichever account you desire.
+
+Direct your browser to [http://localhost:8888/tree](http://localhost:8888/tree) and open the _Voice Recognition.ipynb_ notebook. Execute the cells one by one.
