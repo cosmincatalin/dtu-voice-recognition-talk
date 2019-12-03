@@ -50,4 +50,4 @@ with ThreadPool(processes=10) as pool:
 
 * If you choose something like 200 sentences, you will get close to real-time execution of all the cells in the notebook, but poor performance on inference of the model.
 * If you choose something like 2000 sentences, you will get close to 95% accuracy, albeit some cells will take longer to execute. However, I have managed to run training using the provided Docker image on CPU.
-* Using the full dataset will of course give you the best results, but it might be that you will not be able to complete the notebook using the provide Docker image running on CPU. I have used the full 10K dataset on GPU running in AWS SageMaker.
+* Using the full dataset will of course give you the best results, but it might be that you will not be able to complete the notebook using the provided Docker image running on CPU. I have used the full 10K dataset on GPU running in AWS SageMaker.
