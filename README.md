@@ -29,3 +29,25 @@ Similar, the `AWS_PROFILE` env variable is set to the `default` profile.
 You can modify this to use whichever account you desire.
 
 Direct your browser to [http://localhost:8888/tree](http://localhost:8888/tree) and open the _Voice Recognition.ipynb_ notebook. Execute the cells one by one.
+
+### A note on model performance
+
+One of the cells in the notebook allows you to control how many samples to use out of the 10K you have available.
+The cell in question is this one:
+
+```python
+# This will take some time
+
+# To move things faster we'll do "multi threading"
+from multiprocessing.pool import ThreadPool
+
+# We launch a maximum of 10 functions at a time for each sentence in the set
+# To make the rest of tutorial reasonable fast, we'll use just 2000 sentences instead of the 10.000 we have available.
+# This will, of course, have a negative impact on the final model.
+with ThreadPool(processes=10) as pool:
+    pool.starmap(process_input, enumerate(sentences[:2000]))
+```
+
+* If you choose something like 200 sentences, you will get close to real-time execution of all the cells in the notebook, but poor performance on inference of the model.
+* If you choose something like 2000 sentences, you will get close to 95% accuracy, albeit some cells will take longer to execute. However, I have managed to run training using the provided Docker image on CPU.
+* Using the full dataset will of course give you the best results, but it might be that you will not be able to complete the notebook using the provide Docker image running on CPU. I have used the full 10K dataset on GPU running in AWS SageMaker.
